@@ -219,16 +219,21 @@ class Main {
         {
             String output = "";
             input = hextoBin(input);
-            for (int i = 0; i < 48; i += 6) {
+
+            int boxCount=1;
+            for (int i = 0; i < 48; i += 6,boxCount++) {
                 String temp = input.substring(i, i + 6);
                 int num = i / 6;
                 int row = Integer.parseInt(
                         temp.charAt(0) + "" + temp.charAt(5),
                         2);
+
                 int col = Integer.parseInt(
                         temp.substring(1, 5), 2);
                 output += Integer.toHexString(
                         sbox[num][row][col]);
+
+               // System.out.println("SBOX+"+boxCount+" row: "+row+" col:"+col+" Output: "+output);
             }
             return output;
         }
@@ -362,10 +367,11 @@ class Main {
     // Driver code
     public static void main(String args[])
     {
-        String text = "1A2B3C4D5E6F0101"; // Given as assignment
+            String text = "1A2B3C4D5E6F0101"; // Given as assignment
 //        String text = "FAE7DA512172F59E";
-        //String key = "4249543139413137"; //given as assignment
-        String key = "4249543139413139";
+//        String key = "4249543139413137"; //given as assignment
+        String key = "4249543139413237";
+
 
 
         DES cipher = new DES();
