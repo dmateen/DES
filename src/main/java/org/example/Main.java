@@ -370,8 +370,8 @@ class Main {
             String text = "1A2B3C4D5E6F0101"; // Given as assignment
 //        String text = "FAE7DA512172F59E";
 //        String key = "4249543139413137"; //given as assignment
-        String key = "4249543139413237";
-
+        String key = "4249543139413334";
+        //00263F33 727CEBD
 
 
         DES cipher = new DES();
